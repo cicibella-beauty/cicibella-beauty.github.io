@@ -141,6 +141,14 @@
     cursor:pointer;
   }
 }
+:root { color-scheme: light; }
+
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#ffffff; --fg:#111; --muted:#666; --card:#fafafa; }
+  img{filter:none;}
+}
+
+html, body { background:#fff; color:#111; }
   </style>
 </head>
 <body>
