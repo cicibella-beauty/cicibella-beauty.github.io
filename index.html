@@ -1,10 +1,252 @@
 <!doctype html>
 <html lang="zh-CN">
+<head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CICIBELLA BEAUTY</title>
-  <style>body{font-family:system-ui;margin:4rem;line-height:1.6}a{color:inherit}</style>
-  <h1>你好，世界 ✨</h1>
-  <p>这是用 GitHub Pages 部署的首页。</p>
-  <p><a href="https://github.com/cicibella-beauty/cicibella-beauty.github.io">查看仓库</a></p>
+  <meta name="description" content="CICIBELLA BEAUTY 官方页面" />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --fg:#111;
+      --muted:#666;
+      --brand:#ff4da6;
+      --brand-2:#6c5ce7;
+      --card:#fafafa;
+      --radius:16px;
+      --maxw:1080px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0e0e10; --fg:#f5f5f7; --muted:#9aa0a6; --card:#141417; }
+      img{filter:contrast(1.05) saturate(1.02);}
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;color:var(--fg);background:var(--bg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);margin:auto;padding:0 20px}
+    /* 顶部导航 */
+    header{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter:saturate(1.2) blur(8px);
+      background:color-mix(in oklab,var(--bg),transparent 25%);
+      border-bottom:1px solid color-mix(in oklab,var(--fg),transparent 92%);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      height:64px;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo{
+      width:28px;height:28px;border-radius:8px;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      box-shadow:0 6px 16px color-mix(in oklab,var(--brand),transparent 70%);
+    }
+    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    nav a{padding:8px 10px;border-radius:10px}
+    nav a:hover{background:color-mix(in oklab,var(--fg),transparent 94%);}
+    .nav-btn{display:none}
+    /* 移动端菜单 */
+    @media (max-width:720px){
+      nav ul{display:none}
+      .nav-btn{display:inline-flex;border:1px solid color-mix(in oklab,var(--fg),transparent 88%);
+        padding:8px 10px;border-radius:10px}
+      .menu-open nav ul{display:flex;position:absolute;left:0;right:0;top:64px;
+        background:var(--bg);border-bottom:1px solid color-mix(in oklab,var(--fg),transparent 90%);
+        padding:14px 20px;flex-direction:column;gap:10px}
+    }
+
+    /* 轮播 */
+    .carousel{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--card);margin:20px 0}
+    .slides{display:flex;transition:transform .6s ease}
+    .slide{min-width:100%;aspect-ratio:16/7;display:grid;place-items:center;position:relative}
+    .slide img{width:100%;height:100%;object-fit:cover;display:block}
+    .slide .caption{
+      position:absolute;inset:auto 0 0 0;padding:18px 20px;
+      background:linear-gradient(180deg,transparent,rgba(0,0,0,.45));
+      color:#fff;font-weight:600;letter-spacing:.3px
+    }
+    .dots{position:absolute;display:flex;gap:6px;left:50%;transform:translateX(-50%);bottom:10px}
+    .dot{width:8px;height:8px;border-radius:999px;background:#fff8;outline:1px solid #fff6}
+    .dot.active{background:#fff}
+
+    /* 商品区 */
+    section{margin:48px 0}
+    h2{margin:0 0 16px;font-size:clamp(20px,2.2vw,28px)}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    @media (max-width:1024px){ .products{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:560px){ .products{grid-template-columns:1fr} }
+    .card{
+      background:var(--card);border:1px solid color-mix(in oklab,var(--fg),transparent 90%);
+      border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;
+      transition:transform .15s ease, box-shadow .15s ease
+    }
+    .card:hover{transform:translateY(-2px);box-shadow:0 10px 24px color-mix(in oklab,var(--fg),transparent 94%)}
+    .card img{width:100%;aspect-ratio:1/1;object-fit:cover}
+    .card-body{padding:14px}
+    .name{font-weight:600}
+    .price{color:var(--brand);font-weight:700;margin-top:6px}
+
+    /* 会社概要 */
+    .about{
+      background:linear-gradient(135deg,color-mix(in oklab,var(--brand),transparent 85%),color-mix(in oklab,var(--brand-2),transparent 90%));
+      border:1px solid color-mix(in oklab,var(--fg),transparent 90%);
+      padding:22px;border-radius:var(--radius)
+    }
+    .about p{margin:.3rem 0;color:var(--muted)}
+    .kvs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+    .kv{background:var(--bg);border-radius:14px;padding:12px;border:1px solid color-mix(in oklab,var(--fg),transparent 90%);text-align:center}
+    @media (max-width:720px){ .kvs{grid-template-columns:1fr} }
+
+    /* 底部 */
+    footer{margin-top:56px;padding:26px 0;border-top:1px solid color-mix(in oklab,var(--fg),transparent 90%);color:var(--muted)}
+    .foot{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+    .foot small{opacity:.9}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav" id="top">
+      <a class="brand" href="#top" aria-label="CICIBELLA HOME">
+        <span class="logo" aria-hidden="true"></span>
+        CICIBELLA
+      </a>
+      <button class="nav-btn" aria-label="打开菜单" onclick="document.body.classList.toggle('menu-open')">☰ 菜单</button>
+      <nav aria-label="主导航">
+        <ul>
+          <li><a href="#products">商品</a></li>
+          <li><a href="#about">会社概要</a></li>
+          <li><a href="#contact">联系</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 轮播图 -->
+    <section aria-label="轮播图">
+      <div class="carousel" id="carousel">
+        <div class="slides">
+          <!-- 替换为你的图片 URL；建议 1600×700 以上 -->
+          <div class="slide">
+            <img src="https://placehold.co/1600x700/jpg?text=Banner+1" alt="主推产品形象图 1" loading="eager">
+            <div class="caption">新品上市 · 焕亮你的每一天</div>
+          </div>
+          <div class="slide">
+            <img src="https://placehold.co/1600x700/jpg?text=Banner+2" alt="主推产品形象图 2" loading="lazy">
+            <div class="caption">限时优惠 · 护肤不将就</div>
+          </div>
+          <div class="slide">
+            <img src="https://placehold.co/1600x700/jpg?text=Banner+3" alt="主推产品形象图 3" loading="lazy">
+            <div class="caption">明星成分 · 科学配方</div>
+          </div>
+        </div>
+        <div class="dots" aria-hidden="true">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 商品 -->
+    <section id="products">
+      <h2>精选商品</h2>
+      <div class="products">
+        <!-- 商品 1 -->
+        <article class="card">
+          <img src="https://placehold.co/800x800/jpg?text=Product+1" alt="商品 1 图片" loading="lazy">
+          <div class="card-body">
+            <div class="name">水润修护精华 30ml</div>
+            <div class="price">¥199</div>
+          </div>
+        </article>
+        <!-- 商品 2 -->
+        <article class="card">
+          <img src="https://placehold.co/800x800/jpg?text=Product+2" alt="商品 2 图片" loading="lazy">
+          <div class="card-body">
+            <div class="name">氨基酸温和洁面 120g</div>
+            <div class="price">¥79</div>
+          </div>
+        </article>
+        <!-- 商品 3 -->
+        <article class="card">
+          <img src="https://placehold.co/800x800/jpg?text=Product+3" alt="商品 3 图片" loading="lazy">
+          <div class="card-body">
+            <div class="name">高保湿面霜 50g</div>
+            <div class="price">¥168</div>
+          </div>
+        </article>
+        <!-- 商品 4 -->
+        <article class="card">
+          <img src="https://placehold.co/800x800/jpg?text=Product+4" alt="商品 4 图片" loading="lazy">
+          <div class="card-body">
+            <div class="name">清透防晒乳 SPF50+</div>
+            <div class="price">¥129</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 会社概要 -->
+    <section id="about">
+      <h2>会社概要</h2>
+      <div class="about">
+        <p><strong>会社名：</strong>CICIBELLA BEAUTY Co., Ltd.</p>
+        <p><strong>所在地：</strong>Tokyo, Japan</p>
+        <p><strong>事業内容：</strong>化粧品の企画・販売／スキンケア研究</p>
+        <p><strong>お問い合わせ：</strong><a href="#contact">support@cicibella-beauty.com</a></p>
+        <div class="kvs">
+          <div class="kv"><strong>安全</strong><br>原料トレーサビリティ</div>
+          <div class="kv"><strong>科学</strong><br>成分の有効性データ</div>
+          <div class="kv"><strong>可持续</strong><br>环保包装与减碳运输</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 底部 -->
+  <footer id="contact">
+    <div class="container foot">
+      <small>© <span id="y"></span> CICIBELLA BEAUTY</small>
+      <small>联系：<a href="mailto:support@cicibella-beauty.com">support@cicibella-beauty.com</a></small>
+    </div>
+  </footer>
+
+  <script>
+    // 年份
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // 简易轮播：自动 + 点点状态 + 触摸滑动
+    const root = document.getElementById('carousel');
+    const slides = root.querySelector('.slides');
+    const items  = Array.from(root.querySelectorAll('.slide'));
+    const dots   = Array.from(root.querySelectorAll('.dot'));
+    let idx = 0, timer = null, startX = 0, deltaX = 0;
+
+    function goto(i){
+      idx = (i + items.length) % items.length;
+      slides.style.transform = `translateX(${-idx * 100}%)`;
+      dots.forEach((d,k)=>d.classList.toggle('active', k===idx));
+    }
+    function play(){ timer = setInterval(()=>goto(idx+1), 4000); }
+    function stop(){ clearInterval(timer); }
+
+    // 初始化
+    goto(0); play();
+
+    // 点点点击
+    dots.forEach((d,i)=> d.addEventListener('click', ()=>{ stop(); goto(i); play(); }));
+
+    // 触摸滑动
+    slides.addEventListener('touchstart', e=>{ stop(); startX = e.touches[0].clientX; deltaX=0; }, {passive:true});
+    slides.addEventListener('touchmove',  e=>{ deltaX = e.touches[0].clientX - startX; }, {passive:true});
+    slides.addEventListener('touchend',   ()=>{ if(Math.abs(deltaX)>50){ goto(idx + (deltaX<0?1:-1)); } play(); });
+
+    // 键盘无障碍
+    root.addEventListener('keydown', e=>{
+      if(e.key==='ArrowRight') { stop(); goto(idx+1); play(); }
+      if(e.key==='ArrowLeft')  { stop(); goto(idx-1); play(); }
+    });
+  </script>
+</body>
 </html>
