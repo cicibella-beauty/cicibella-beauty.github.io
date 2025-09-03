@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="UTF-8">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -13,8 +13,11 @@
       --brand:#ff4da6;
       --brand-2:#6c5ce7;
       --card:#fafafa;
-      --radius:16px;
+      --radius:10px;
       --maxw:1080px;
+          --font-family-text-head: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'MS Pゴシック', 'MS PGothic', sans-serif;
+    --font-family-text-subhead: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'MS Pゴシック', 'MS PGothic', sans-serif;
+    --font-family-text-body: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'MS Pゴシック', 'MS PGothic', sans-serif;
     }
     .brand img{
       width: 270px;
@@ -51,11 +54,12 @@
     /* 移动端菜单 */
     @media (max-width:720px){
       nav ul{display:none}
-      .nav-btn{display:inline-flex;border:1px solid color-mix(in oklab,var(--fg),transparent 88%);
-        padding:8px 10px;border-radius:10px}
+      .nav-btn{display:inline-flex;border:none;
+        padding:8px 10px;border-radius:10px;background: none;}
       .menu-open nav ul{display:flex;position:absolute;left:0;right:0;top:64px;
         background:var(--bg);border-bottom:1px solid color-mix(in oklab,var(--fg),transparent 90%);
         padding:14px 20px;flex-direction:column;gap:10px}
+
     }
 
     /* 轮播 */
@@ -73,20 +77,19 @@
     .dot.active{background:#fff}
 
     /* 商品区 */
-    section{margin:48px 0}
-    h2{margin:0 0 16px;font-size:clamp(20px,2.2vw,28px)}
-    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    section{margin:16px 0}
+    h2{margin:100px 0 16px;font-size:clamp(20px,2.2vw,28px)}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom: 26px;}
     @media (max-width:1024px){ .products{grid-template-columns:repeat(2,1fr)} }
     @media (max-width:560px){ .products{grid-template-columns:1fr} }
     .card{
-      background:var(--card);border:1px solid color-mix(in oklab,var(--fg),transparent 90%);
       border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;
       transition:transform .15s ease, box-shadow .15s ease
     }
     .card:hover{transform:translateY(-2px);box-shadow:0 10px 24px color-mix(in oklab,var(--fg),transparent 94%)}
     .card img{width:100%;aspect-ratio:1/1;object-fit:cover}
     .card-body{padding:14px}
-    .name{font-weight:600}
+    .name{font-weight:100}
     .price{color:var(--brand);font-weight:700;margin-top:6px}
 
     /* 会社概要 */
@@ -149,40 +152,101 @@
 
     <!-- 商品 -->
     <section id="products">
-      <h2>精选商品</h2>
+      <h2>NEW ITEM</h2>
       <div class="products">
         <!-- 商品 1 -->
         <article class="card">
-          <img src="https://placehold.co/800x800/jpg?text=Product+1" alt="商品 1 图片" loading="lazy">
+          <img src="https://d2w53g1q050m78.cloudfront.net/cicibellajp/uploads/az.jpg" alt="az" loading="lazy">
           <div class="card-body">
-            <div class="name">水润修护精华 30ml</div>
-            <div class="price">¥199</div>
+            <div class="name">シシベラ プレミアムビューティーセラム アゼライン酸 30ml</div>
+            <div class="price">¥2,780(税込)</div>
           </div>
         </article>
         <!-- 商品 2 -->
         <article class="card">
-          <img src="https://placehold.co/800x800/jpg?text=Product+2" alt="商品 2 图片" loading="lazy">
+          <img src="https://d2w53g1q050m78.cloudfront.net/cicibellajp/uploads/ex.jpg" alt="ex" loading="lazy">
           <div class="card-body">
-            <div class="name">氨基酸温和洁面 120g</div>
-            <div class="price">¥79</div>
+            <div class="name">シシベラ プレミアムビューティーセラム エクソソーム 30ml</div>
+            <div class="price">¥2,780(税込)</div>
           </div>
         </article>
         <!-- 商品 3 -->
         <article class="card">
-          <img src="https://placehold.co/800x800/jpg?text=Product+3" alt="商品 3 图片" loading="lazy">
+          <img src="https://d2w53g1q050m78.cloudfront.net/cicibellajp/uploads/pd.jpg" alt="pd" loading="lazy">
           <div class="card-body">
-            <div class="name">高保湿面霜 50g</div>
-            <div class="price">¥168</div>
+            <div class="name">シシベラ プレミアムビューティーセラム PDRN+ 30ml</div>
+            <div class="price">¥2,780(税込)</div>
           </div>
         </article>
         <!-- 商品 4 -->
         <article class="card">
-          <img src="https://placehold.co/800x800/jpg?text=Product+4" alt="商品 4 图片" loading="lazy">
+          <img src="https://d2w53g1q050m78.cloudfront.net/cicibellajp/uploads/va.jpg" alt="va" loading="lazy">
           <div class="card-body">
-            <div class="name">清透防晒乳 SPF50+</div>
-            <div class="price">¥129</div>
+            <div class="name">シシベラ エッセンスマスク VA AZELAIC ACID＆VITAMINS 7枚</div>
+            <div class="price">¥750(税込)</div>
           </div>
         </article>
+      </div>
+      <div class="products">
+        <!-- 商品 1 -->
+        <article class="card">
+          <img src="https://d2w53g1q050m78.cloudfront.net/cicibellajp/uploads/pc.jpg" alt="pc" loading="lazy">
+          <div class="card-body">
+            <div class="name">シシベラ エッセンスマスク PC PDRN＆CERAMIDE 7枚</div>
+            <div class="price">¥750(税込)</div>
+          </div>
+        </article>
+        <!-- 商品 2 -->
+        <article class="card">
+          <img src="https://d2w53g1q050m78.cloudfront.net/cicibellajp/uploads/rg.jpg" alt="rg" loading="lazy">
+          <div class="card-body">
+            <div class="name">シシベラ エッセンスマスク RG RETINOL＆GLUTATHIONE 7枚</div>
+            <div class="price">¥750(税込)</div>
+          </div>
+        </article>
+        <!-- 商品 3 -->
+        <article class="card">
+          <img src="https://d2w53g1q050m78.cloudfront.net/cicibellajp/uploads/ea.jpg" alt="ea" loading="lazy">
+          <div class="card-body">
+            <div class="name">シシベラ エッセンスマスク EA EXOSOME＆ARBUTIN 7枚</div>
+            <div class="price">¥750(税込)</div>
+          </div>
+        </article>
+        <!-- 商品 4 -->
+        <article class="card">
+          <img src="https://d2w53g1q050m78.cloudfront.net/cicibellajp/uploads/azb.jpg" alt="azb" loading="lazy">
+          <div class="card-body">
+            <div class="name">シシベラ プレミアムミルキーマスク AZB AZELAIC ACID+ 4袋/箱</div>
+            <div class="price">¥1,120(税込)</div>
+          </div>
+        </article>
+      </div>
+      <div class="products">
+        <!-- 商品 1 -->
+        <article class="card">
+          <img src="https://d2w53g1q050m78.cloudfront.net/cicibellajp/uploads/arb.jpg" alt="arb" loading="lazy">
+          <div class="card-body">
+            <div class="name">シシベラ プレミアムミルキーマスク ARB ARBUTIN+ 4袋/箱</div>
+            <div class="price">¥1,120(税込)</div>
+          </div>
+        </article>
+        <!-- 商品 2 -->
+        <article class="card">
+          <img src="https://d2w53g1q050m78.cloudfront.net/cicibellajp/uploads/exb.jpg" alt="exb" loading="lazy">
+          <div class="card-body">
+            <div class="name">シシベラ プレミアムミルキーマスク EXB EXOSOME+ 4袋/箱</div>
+            <div class="price">¥1,120(税込)</div>
+          </div>
+        </article>
+        <!-- 商品 3 -->
+        <article class="card">
+          <img src="https://d2w53g1q050m78.cloudfront.net/cicibellajp/uploads/pdb.jpg" alt="pdb" loading="lazy">
+          <div class="card-body">
+            <div class="name">シシベラ プレミアムミルキーマスク PDB PDRN+ 4袋/箱</div>
+            <div class="price">¥1,120(税込)</div>
+          </div>
+        </article>
+        <!-- 商品 4 -->
       </div>
     </section>
 
@@ -190,14 +254,14 @@
     <section id="about">
       <h2>会社概要</h2>
       <div class="about">
-        <p><strong>会社名：</strong>CICIBELLA BEAUTY Co., Ltd.</p>
-        <p><strong>所在地：</strong>Tokyo, Japan</p>
+        <p><strong>会社名：</strong>La Bella株式会社</p>
+        <p><strong>所在地：</strong>〒150-0011<br>東京都渋谷区東2-27-10　TBCビル2階</p>
         <p><strong>事業内容：</strong>化粧品の企画・販売／スキンケア研究</p>
         <p><strong>お問い合わせ：</strong><a href="#contact">support@cicibella-beauty.com</a></p>
         <div class="kvs">
-          <div class="kv"><strong>安全</strong><br>原料トレーサビリティ</div>
-          <div class="kv"><strong>科学</strong><br>成分の有効性データ</div>
-          <div class="kv"><strong>可持续</strong><br>环保包装与减碳运输</div>
+          <div class="kv"><strong>安心へのこだわり</strong><br>原料の調達から製造まで徹底した品質管理で、肌に優しいケアを実現します。</div>
+          <div class="kv"><strong>科学的アプローチ</strong><br>先端研究に基づく成分と処方で、肌本来の美しさを引き出します。</div>
+          <div class="kv"><strong>サステナブルな美しさ</strong><br>美を追求しながら地球環境にも配慮し、持続可能な未来を共に創ります。</div>
         </div>
       </div>
     </section>
@@ -207,7 +271,7 @@
   <footer id="contact">
     <div class="container foot">
       <small>© <span id="y"></span> CICIBELLA BEAUTY</small>
-      <small>联系：<a href="mailto:support@cicibella-beauty.com">support@cicibella-beauty.com</a></small>
+      <small>お問い合わせ：<a href="mailto:support@cicibella-beauty.com">support@cicibella-beauty.com</a></small>
     </div>
   </footer>
 
