@@ -613,7 +613,7 @@ h1 {
   display: block;
 }
 .tab1_ttl {
-	background-color: #c19120;
+	background-color: #1b4c97;
 }
 .tab2_ttl {
 	background-color: #009176;
@@ -624,7 +624,7 @@ h1 {
 .tab1_inner {
   background: #EFD180;
   background: linear-gradient(90deg, rgba(239, 209, 128, 1) 0%, rgba(255, 247, 205, 1) 50%, rgba(252, 227, 131, 1) 100%);
-	border-top: 0.7rem solid #c19120;
+	border-top: 0.7rem solid #1b4c97;
 }
 .tab2_inner {
   background: #00AEA0;
@@ -674,7 +674,7 @@ h1 {
     padding-bottom: 60px;
   }
   .tab1_inner {
-    border-top: 8px solid #c19120;
+    border-top: 8px solid #1b4c97;
   }
   .tab2_inner {
     border-top: 8px solid #009176;
