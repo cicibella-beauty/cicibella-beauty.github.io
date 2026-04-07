@@ -622,9 +622,7 @@ h1 {
 	background-color: #47b302;
 }
 .tab1_inner {
-  background: #EFD180;
-  background: linear-gradient(90deg, rgba(239, 209, 128, 1) 0%, rgba(255, 247, 205, 1) 50%, rgba(252, 227, 131, 1) 100%);
-	border-top: 0.7rem solid #1b4c97;
+  background: #7cb8e0;
 }
 .tab2_inner {
   background: #00AEA0;
