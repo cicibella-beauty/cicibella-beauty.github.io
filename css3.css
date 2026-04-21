@@ -933,6 +933,6 @@ main,
 }
 
 .special_tx_wrap {
-  background: #003a7b;
+  background: linear-gradient(180deg, #f5f6fa 80%, #c4cfe3 100%);
 }
 
