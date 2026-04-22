@@ -553,9 +553,7 @@ h1 {
 #pickup h2 {
 	background: #ecf5f6;
 }
-.pickup_wrap {
-  margin-top: -8rem;
-}
+
 .tab-area {
   display: flex;
   justify-content: space-between;
@@ -641,9 +639,7 @@ h1 {
 	margin-top: 1.5rem;
 }
 @media screen and (min-width: 769px) {
-  .pickup_wrap {
-    margin-top: -80px;
-  }
+
   .tab-area .tab {
     height: 90px;
     border-radius: 20px 20px 0 0;
