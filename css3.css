@@ -602,7 +602,7 @@ h1 {
 	background-color: #1b4c97;
 }
 .tab2_ttl {
-	background-color: #009176;
+	background-color: #40afac;
 }
 .tab3_ttl {
 	background-color: #47b302;
@@ -611,9 +611,7 @@ h1 {
   background: #7cb8e0;
 }
 .tab2_inner {
-  background: #00AEA0;
-  background: linear-gradient(90deg, rgba(0, 174, 160, 1) 0%, rgba(82, 215, 196, 1) 50%, rgba(0, 174, 160, 1) 100%);
-	border-top: 0.6rem solid #009176;
+  border-top: 0.6rem solid #40afac;
 }
 .tab3_inner {
   background: #74CE78;
@@ -659,7 +657,7 @@ h1 {
     border-top: 8px solid #1b4c97;
   }
   .tab2_inner {
-    border-top: 8px solid #009176;
+    border-top: 8px solid #40afac;
   }
 	.tab3_inner {
     border-top: 8px solid #47b302;
