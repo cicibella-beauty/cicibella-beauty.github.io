@@ -482,20 +482,8 @@ h1 {
 	position: relative;
 }
 .acc_btn:before,
-.acc_btn:after {
-  content: "";
-  position: absolute;
-  top: calc(50% - 0.6rem);
-  right: 2.2rem;
-  width: 0.2rem;
-  height: 1.2rem;
-  background-color: #008560;
-	transition: .3s;
-}
-.acc_btn:after {
-	-webkit-transform: rotate(90deg);
-	transform: rotate(90deg);
-}
+
+
 .acc_btn.show:before {
 	-webkit-transform: rotate(90deg);
 	transform: rotate(90deg);
@@ -922,8 +910,8 @@ h1 {
 
 main,
 .caloseries_bg {
-  background: #EFD180;
-  background: linear-gradient(270deg, rgba(239, 209, 128, 1) 0%, rgba(255, 247, 205, 1) 50%, rgba(252, 227, 131, 1) 100%);
+  background: #ecf5f6;
+
 }
 
 .mv_tx_wrap {
