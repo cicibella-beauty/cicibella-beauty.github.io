@@ -298,7 +298,7 @@ h1 {
 	width: 16rem;
   top: 16.4rem;
   left: calc(50% - 8rem);
-	filter: drop-shadow(0 0 0.3rem rgba(165,89,38,1));
+	filter: drop-shadow(0px 0px 7px #3b9bd0);
 }
 .mv_anime_02 {
 	position: absolute;
