@@ -671,11 +671,7 @@ h1 {
   }
 }
 
-#voice {
-  background: #85CA69;
-  background: linear-gradient(90deg, rgba(133, 202, 105, 1) 0%, rgba(13, 135, 111, 1) 100%);
-	padding-bottom: 4rem;
-}
+
 
 #comparison {
 	margin-top: -4rem;
