@@ -201,7 +201,7 @@ h1 {
 	main {
 		max-width: 500px;
 		margin: 0 auto;
-		filter: drop-shadow(0px 0px 7px rgba(144,96,15,1));
+		filter: drop-shadow(0px 0px 7px #3b9bd0);
 	}
 }
 
