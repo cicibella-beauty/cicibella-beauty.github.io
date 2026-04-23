@@ -648,9 +648,7 @@ h1 {
     height: 100px;
 		transition: .3s;
   }
-  .content-area .content {
-    padding-bottom: 60px;
-  }
+
   .tab1_inner {
     border-top: 8px solid #1b4c97;
   }
